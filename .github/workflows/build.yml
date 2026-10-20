@@ -26,6 +26,11 @@ jobs:
       - name: Install Capacitor
         run: npm install
 
+      - name: Prepare web assets
+        run: |
+          mkdir -p www
+          cp index.html www/index.html
+
       - name: Create Android project and copy the game into it
         run: |
           npx cap add android
